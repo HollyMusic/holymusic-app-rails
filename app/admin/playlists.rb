@@ -1,5 +1,4 @@
 ActiveAdmin.register Playlist do
-
   permit_params :name, :active, song_ids: []
 
   scope :active
@@ -72,7 +71,7 @@ ActiveAdmin.register Playlist do
                lowquality: true,
                zoom: 1,
                dpi: 75
-               #show_as_html: true
+        # show_as_html: true
       end
     end
   end
@@ -82,7 +81,7 @@ ActiveAdmin.register Playlist do
     @new_playlist = @playlist.duplicate
     respond_to do |format|
       format.html do
-        redirect_to edit_admin_playlist_path(@new_playlist), notice: "You have duplicate the playlist succesfully"
+        redirect_to edit_admin_playlist_path(@new_playlist), notice: 'You have duplicate the playlist succesfully'
       end
     end
   end
@@ -93,6 +92,6 @@ ActiveAdmin.register Playlist do
                   :id,
                   :name,
                   :_destroy,
-                  playlist_items_attributes: [:id, :position, :song_id, :_destroy]
+                  { playlist_items_attributes: %i[id position song_id _destroy] }
                 ]
 end

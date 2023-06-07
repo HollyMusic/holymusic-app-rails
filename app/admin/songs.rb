@@ -20,5 +20,4 @@ ActiveAdmin.register Song do
       active_admin_comments
     end
   end
-
 end

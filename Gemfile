@@ -36,33 +36,33 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '1.12.0', require: false
 
-gem 'devise', '4.8.1'
 gem 'activeadmin', '2.9.0'
-gem 'active_skin'
 gem 'activeadmin_addons', '1.9.0'
-gem 'versionist'
 gem 'active_model_serializers', '0.10.13'
-gem 'newrelic_rpm'
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
-gem 'rollbar'
-gem 'quiet_safari'
-gem 'mimemagic', '0.3.10'
-gem 'rack', '2.2.3.1'
-gem 'nokogiri', '1.13.6'
-gem 'inherited_resources', '1.13.1'
+gem 'active_skin'
+gem 'devise', '4.8.1'
 gem 'ffi', '1.15.5'
-gem 'thor', '1.2.1'
 gem 'formtastic', '4.0.0.rc1'
-gem 'net-smtp', require: false
+gem 'inherited_resources', '1.13.1'
+gem 'mimemagic', '0.3.10'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
+gem 'net-smtp', require: false
+gem 'newrelic_rpm'
+gem 'nokogiri', '1.13.6'
+gem 'quiet_safari'
+gem 'rack', '2.2.3.1'
+gem 'rollbar'
+gem 'thor', '1.2.1'
+gem 'versionist'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'rswag'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -71,17 +71,17 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'listen', '3.7.1'
+  gem 'rubocop', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '3.7.1'
 end
 
 group :test do
+  gem 'database_cleaner-active_record'
   gem 'rspec', '~> 3.0'
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'database_cleaner-active_record'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
