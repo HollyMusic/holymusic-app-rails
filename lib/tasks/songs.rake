@@ -5,11 +5,10 @@ namespace :songs do
   task import: :environment do
     ActiveRecord::Base.transaction do
       CSV.foreach(SONGS_CSV_PATH, headers: true, col_sep: ',') do |row|
-
         Song.create!(
-        	title: row['title'],
-        	content: row['content'],
-        	position: row['position'].to_i
+          title: row['title'],
+          content: row['content'],
+          position: row['position'].to_i
         )
       end
     end
